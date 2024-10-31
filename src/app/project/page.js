@@ -75,7 +75,7 @@ export default function Project() {
               <p className="mb-2 text-gray-600 dark:text-gray-400">{project.description}</p>
               <p className="font-medium text-gray-600 dark:text-gray-400">{project.technologies}</p>
               <a href={project.link} className="text-blue-500 hover:underline mt-4 inline-block">
-                View Project
+                View Projects
               </a>
             </div>
           ))}
