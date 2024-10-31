@@ -33,7 +33,7 @@ export default function Header() {
         <Link href="/" className="text-gray-200 font-semibold hover:border-b-2 hover:border-gray-400 transition duration-200">Home</Link>
         <Link href="/about" className="text-gray-200 font-semibold hover:border-b-2 hover:border-gray-400 transition duration-200">About</Link>
         <Link href="/contact" className="text-gray-200 font-semibold hover:border-b-2 hover:border-gray-400 transition duration-200">Contact</Link>
-        <Link href="/project" className="text-gray-200 font-semibold hover:border-b-2 hover:border-gray-400 transition duration-200">Project</Link>
+        <Link href="/project" className="text-gray-200 font-semibold hover:border-b-2 hover:border-gray-400 transition duration-200">Projects</Link>
         <Link href="/skills" className="text-gray-200 font-semibold hover:border-b-2 hover:border-gray-400 transition duration-200">Skills</Link>
         
         {/* Dark Mode Toggle Button */}
