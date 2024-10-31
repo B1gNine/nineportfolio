@@ -1,101 +1,112 @@
-import Image from "next/image";
-
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const posts = [
+    {
+      title: "Making a design system from scratch",
+      date: "12 Feb 2020",
+      category: "Design, Pattern",
+      summary: "Learn how to create a cohesive design system effectively, considering user needs, accessibility, and scalability while ensuring a seamless and intuitive experience across different platforms and devices.",
+      icon: "📐", // Design icon
+    },
+    {
+      title: "Creating pixel perfect icons in Figma",
+      date: "12 Feb 2020",
+      category: "Figma, Icon Design",
+      summary: "Design precise and scalable icons using Figma tools efficiently, focusing on maintaining consistency, applying best practices, and ensuring visual clarity to enhance user interface experiences.",
+      icon: "🎨", // Figma icon
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const works = [
+    {
+      title: "Designing Dashboards",
+      category: "Dashboard",
+      year: "2024",
+      summary: "Creating intuitive and interactive dashboards for data visualization, enabling users to gain insights easily through well-organized metrics, user-friendly layouts, and engaging visual elements that enhance decision-making.",
+      image: "dashboard.png", // Add your image path
+    },
+    {
+      title: "Vibrant Portraits of 2020",
+      category: "Illustration",
+      year: "2014",
+      summary: "Capturing emotions through colorful and lively digital portraits, utilizing a variety of styles and techniques that reflect individuality while connecting with the audience on an emotional level.",
+      image: "apt.png", // Add your image path
+    },
+    {
+      title: "36 Days of Malayalam type",
+      category: "Typography",
+      year: "2018",
+      summary: "Exploring Malayalam typography through daily creative challenges, highlighting the beauty of the script while pushing boundaries in design and encouraging artistic expression within a structured format.",
+      image: "a36.png", // Add your image path
+    },
+  ];
+
+  return (
+    <div className="min-h-screen p-8 bg-white dark:bg-gray-900">
+      {/* Profile Section */}
+      <section className="flex items-center justify-between bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md border border-gray-300 dark:border-gray-700">
+        <div className="max-w-lg">
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
+            Hi, I am Kareem, A Web Developer
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400 mt-4">
+            I craft seamless digital experiences that not only look stunning but also drive results. With a passion for coding and a keen eye for design, I bring ideas to life through innovative web solutions. Let’s build something amazing together!
+          </p>
+          <button className="mt-6 bg-blue-500 text-white px-4 py-2 rounded transition-colors hover:bg-blue-600">
+            Download Resume
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <div>
+          <img
+            className="rounded-full h-32 w-32 object-cover"
+            src="bless.jpg"
+            alt="Profile"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </section>
+
+      {/* Recent Posts Section */}
+      <section className="mt-8">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Recent Posts</h2>
+          <a href="#" className="text-blue-500 hover:underline">View All</a>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {posts.map((post, index) => (
+            <div 
+              key={index} 
+              className="flex items-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-300 dark:border-gray-700 transition duration-300 ease-in-out hover:border-black dark:hover:border-white"
+            >
+              <span className="text-8xl mr-4">{post.icon}</span> {/* Bigger icons */}
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{post.title}</h3>
+                <p className="text-gray-400">{post.date}</p><p className="text-gray-600 dark:text-gray-400">{post.category}</p>
+                <p className="text-gray-500 dark:text-gray-300 mt-2">{post.summary}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured Works Section */}
+      <section className="mt-8">
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Featured Works</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {works.map((work, index) => (
+            <div 
+              key={index} 
+              className="flex bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-300 dark:border-gray-700 transition duration-300 ease-in-out hover:border-black dark:hover:border-white"
+            >
+              <img src={work.image} alt={work.title} className="h-32 w-32 rounded mr-4 object-cover" />
+              <div>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{work.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{work.category}</p>
+                <p className="text-gray-400">{work.year}</p>
+                <p className="text-gray-500 dark:text-gray-300 mt-2">{work.summary}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
