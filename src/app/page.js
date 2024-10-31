@@ -96,7 +96,7 @@ export default function Home() {
               key={index} 
               className="flex bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-300 dark:border-gray-700 transition duration-300 ease-in-out hover:border-black dark:hover:border-white"
             >
-              <img src={work.image} alt={work.title} className="h-32 w-32 rounded mr-4 object-cover" />
+              {/* <img src={work.image} alt={work.title} className="h-32 w-32 rounded mr-4 object-cover" /> */}
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{work.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{work.category}</p>
