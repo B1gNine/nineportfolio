@@ -1,6 +1,40 @@
+"use client";
+
+import { useState } from 'react';
 import Head from 'next/head';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', comments: '' });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('');
+
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '', comments: '' });
+      } else {
+        setStatus('Failed to send message.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus('An error occurred. Please try again.');
+    }
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900">
       <Head>
@@ -15,7 +49,7 @@ export default function Contact() {
         </div>
 
         {/* Contact Form */}
-        <form className="mt-8 space-y-6 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg" action="#" method="POST">
+        <form className="mt-8 space-y-6 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label htmlFor="name" className="sr-only">
@@ -27,6 +61,8 @@ export default function Contact() {
                 type="text"
                 autoComplete="name"
                 required
+                value={formData.name}
+                onChange={handleChange}
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white dark:bg-gray-700 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Your Name"
               />
@@ -42,6 +78,8 @@ export default function Contact() {
                 type="email"
                 autoComplete="email"
                 required
+                value={formData.email}
+                onChange={handleChange}
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white dark:bg-gray-700 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Email Address"
               />
@@ -57,6 +95,8 @@ export default function Contact() {
               name="message"
               rows="4"
               required
+              value={formData.message}
+              onChange={handleChange}
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 dark:text-white dark:bg-gray-700 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Your Message"
             ></textarea>
@@ -65,13 +105,15 @@ export default function Contact() {
           {/* Custom Comment Section */}
           <div>
             <label htmlFor="comments" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Comments 
+              Comments
             </label>
             <textarea
               id="comments"
               name="comments"
               rows="4"
               required
+              value={formData.comments}
+              onChange={handleChange}
               className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-white focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="Leave your comments here..."
             ></textarea>
@@ -86,6 +128,8 @@ export default function Contact() {
             </button>
           </div>
         </form>
+
+        {status && <p className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">{status}</p>}
       </div>
     </div>
   );
