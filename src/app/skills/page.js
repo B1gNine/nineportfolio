@@ -47,11 +47,11 @@ const Skills = () => {
             title: "MongoDB",
             summary: "NoSQL database for modern web applications.",
           },
-          {
-            icon: <FaDatabase className="h-16 w-16 text-blue-600 mb-4" />,
-            title: "SQL",
-            summary: "Managing relational databases and data queries.",
-          },
+          // {
+          //   icon: <FaDatabase className="h-16 w-16 text-blue-600 mb-4" />,
+          //   title: "SQL",
+          //   summary: "Managing relational databases and data queries.",
+          // },
           {
             icon: <FaGitAlt className="h-16 w-16 text-red-600 mb-4" />,
             title: "Git",
@@ -62,16 +62,16 @@ const Skills = () => {
             title: "Tailwind CSS",
             summary: "Utility-first CSS framework for rapid UI development.",
           },
-          {
-            icon: <SiTypescript className="h-16 w-16 text-blue-600 mb-4" />,
-            title: "TypeScript",
-            summary: "Superset of JavaScript that adds static types.",
-          },
-          {
-            icon: <DiJqueryLogo className="h-16 w-16 text-blue-500 mb-4" />,
-            title: "jQuery",
-            summary: "Simplifying HTML document traversing and event handling.",
-          },
+          // {
+          //   icon: <SiTypescript className="h-16 w-16 text-blue-600 mb-4" />,
+          //   title: "TypeScript",
+          //   summary: "Superset of JavaScript that adds static types.",
+          // },
+          // {
+          //   icon: <DiJqueryLogo className="h-16 w-16 text-blue-500 mb-4" />,
+          //   title: "jQuery",
+          //   summary: "Simplifying HTML document traversing and event handling.",
+          // },
         ].map((skill, index) => (
           <div key={index} className="flex flex-col items-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-300 dark:border-gray-700">
             {skill.icon}

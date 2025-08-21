@@ -108,8 +108,8 @@ export default function Home() {
             I craft seamless digital experiences that not only look stunning but also drive results. With a passion for coding and a keen eye for design, I bring ideas to life through innovative web solutions. Let’s build something amazing together!
           </p>
           <a
-            href="/Kareem_Olatunji_Resume.pdf" // Path to your resume file in the public folder
-            download="Kareem_Olatunji_Resume.pdf"
+            href="/Resume.pdf" // Path to your resume file in the public folder
+            download="Resume.pdf"
             className="mt-6 bg-blue-500 text-white px-4 py-2 rounded transition-colors hover:bg-blue-600 inline-block"
           >
             Download Resume
