@@ -50,7 +50,7 @@ const Footer = () => {
             </svg>
           </a>
         </div>
-        <p className="text-gray-500 dark:text-gray-400">Copyright ©️ 2024 All rights reserved</p>
+        <p className="text-gray-500 dark:text-gray-400">Copyright ©️ 2025 All rights reserved</p>
       </div>
     </footer>
   );
